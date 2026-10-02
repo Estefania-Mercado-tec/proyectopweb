@@ -1,0 +1,4 @@
+.encabezado { background: #d63384; color: #fff; }
+.btn-rosa { background: #d63384; color: #fff; }
+.btn-rosa:hover { background: #b02a6b; color: #fff; }
+.navbar .nav-link.active { color: #d63384; font-weight: bold; }
