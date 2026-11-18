@@ -1,4 +1,89 @@
-.encabezado { background: #d63384; color: #fff; }
-.btn-rosa { background: #d63384; color: #fff; }
-.btn-rosa:hover { background: #b02a6b; color: #fff; }
-.navbar .nav-link.active { color: #d63384; font-weight: bold; }
+/* ESTILOS GENERALES */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8fb;
+  color: #513442;
+  margin: 0;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  background-color: #f8dce8;
+  color: #642b48;
+  padding: 25px;
+}
+
+/* NAVEGACIÓN */
+.navbar {
+  background-color: #fff0f5 !important;
+}
+
+.navbar .nav-link {
+  color: #642b48;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #d65b8d;
+  font-weight: bold;
+}
+
+/* TITULOS */
+h1,
+h2,
+h3 {
+  color: #873b60;
+}
+
+/* BOTONES */
+.btn-rosa {
+  background-color: #cf6b94;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+}
+
+.btn-rosa:hover {
+  background-color: #a94770;
+  color: white;
+}
+
+/* TARJETAS */
+.card {
+  border: 1px solid #f3d3e0;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* IMAGENES */
+img {
+  max-width: 100%;
+}
+
+/* PIE DE PAGINA */
+footer {
+  background-color: #f8dce8;
+  color: #642b48;
+  padding: 20px;
+  text-align: center;
+}
+
+/* FORMULARIOS */
+.form-control {
+  border: 1px solid #e8b9cc;
+  border-radius: 10px;
+}
+
+.form-control:focus {
+  border-color: #cf6b94;
+  box-shadow: 0 0 0 0.2rem rgba(207, 107, 148, 0.2);
+}
