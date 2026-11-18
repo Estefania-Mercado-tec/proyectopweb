@@ -1,39 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inicio | Mely Nails</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/estilos.css" rel="stylesheet">
-</head>
-<body>
-<header class="encabezado text-center py-4">
-  <h1 class="h3 m-0">💅 Mely Nails</h1>
-  <p class="m-0">Uñas acrílicas, Soft Gel y más</p>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-      <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-    </ul>
-  </div>
-</nav>
+    <meta
+      name="description"
+      content="Mely Nails: servicios de manicura, uñas esculpidas y diseños personalizados."
+    />
 
-<main class="container my-5">
-  <h2>Bienvenida a Mely Nails</h2>
-  <p>Realzamos tus manos con diseños únicos: acrílicas, Soft Gel, esmaltado semipermanente y nail art.</p>
-  <a href="contacto.html" class="btn btn-rosa">Reservá tu turno</a>
-</main>
+    <title>Inicio | Mely Nails</title>
 
-<footer class="encabezado text-center py-3">
-  <p class="m-0">© 2026 Mely Nails</p>
-</footer>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/estilos.css" rel="stylesheet" />
+  </head>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-</body>
+  <body>
+    <!-- ENCABEZADO -->
+    <header class="encabezado text-center">
+      <h1 class="m-0">💅 Mely Nails</h1>
+      <p class="m-0">Belleza y cuidado para tus uñas</p>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Mely Nails</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html" aria-current="page"
+                >Inicio</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="servicios.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Servicios
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="servicios.html"
+                    >Todos los servicios</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="manicura.html"
+                    >Manicura clásica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="semipermanente.html"
+                    >Semipermanente</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="unas-esculpidas.html"
+                    >Uñas esculpidas</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="galeria.html">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="precios.html">Precios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="promociones.html">Promociones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre-nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="opiniones.html">Opiniones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="preguntas-frecuentes.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- PRESENTACIÓN PRINCIPAL -->
+      <section class="container text-center py-5">
+        <h2>Realzá tu belleza con Mely Nails</h2>
+        <p class="lead">
+          Manicura, diseños personalizados y belleza para tus uñas.
+        </p>
+        <a href="contacto.html" class="btn btn-rosa">Reservá tu turno</a>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section class="container py-5">
+        <h2 class="text-center mb-4">Nuestros servicios</h2>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="card h-100">
+              <img src="img/manicura.jpeg" alt="Trabajo de manicura clásica" />
+              <div class="card-body text-center">
+                <h3 class="h5">Manicura clásica</h3>
+                <p>Cuidado y belleza para tus manos.</p>
+                <a href="manicura.html" class="btn btn-rosa">Ver servicio</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100">
+              <img
+                src="img/esmaltado.jpeg"
+                alt="Trabajo de esmaltado semipermanente"
+              />
+              <div class="card-body text-center">
+                <h3 class="h5">Semipermanente</h3>
+                <p>Color y brillo para tus uñas por más tiempo.</p>
+                <a href="semipermanente.html" class="btn btn-rosa"
+                  >Ver servicio</a
+                >
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100">
+              <img src="img/esculpidas.jpeg" alt="Diseño de uñas esculpidas" />
+              <div class="card-body text-center">
+                <h3 class="h5">Uñas esculpidas</h3>
+                <p>Diseños y extensiones para lucir uñas increíbles.</p>
+                <a href="unas-esculpidas.html" class="btn btn-rosa"
+                  >Ver servicio</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERÍA -->
+      <section class="container text-center py-5">
+        <h2>Conocé nuestros trabajos</h2>
+        <p>Descubrí diseños únicos y personalizados.</p>
+        <a href="galeria.html" class="btn btn-rosa">Ver galería</a>
+      </section>
+
+      <!-- PRECIOS -->
+      <section class="container text-center py-5">
+        <h2>Nuestros precios</h2>
+        <p>Consultá los valores de nuestros servicios.</p>
+        <a href="precios.html" class="btn btn-rosa">Ver precios</a>
+      </section>
+
+      <!-- PROMOCIONES -->
+      <section class="container text-center py-5">
+        <h2>Promociones</h2>
+        <p>Conocé nuestras promociones y propuestas especiales.</p>
+        <a href="promociones.html" class="btn btn-rosa">Ver promociones</a>
+      </section>
+
+      <!-- SOBRE NOSOTROS -->
+      <section class="container text-center py-5">
+        <h2>Sobre Mely Nails</h2>
+        <p>
+          Conocé nuestro emprendimiento y nuestra pasión por el cuidado de las
+          uñas.
+        </p>
+        <a href="sobre-nosotros.html" class="btn btn-rosa">Conocenos</a>
+      </section>
+
+      <!-- OPINIONES -->
+      <section class="container text-center py-5">
+        <h2>Opiniones de nuestras clientas</h2>
+        <p>Conocé las opiniones y experiencias de nuestras clientas.</p>
+        <a href="opiniones.html" class="btn btn-rosa">Ver opiniones</a>
+      </section>
+
+      <!-- PREGUNTAS FRECUENTES -->
+      <section class="container text-center py-5">
+        <h2>Preguntas frecuentes</h2>
+        <p>Encontrá respuestas a las consultas más habituales.</p>
+        <a href="preguntas-frecuentes.html" class="btn btn-rosa"
+          >Ver preguntas frecuentes</a
+        >
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="container text-center py-5">
+        <h2>¿Querés reservar tu turno?</h2>
+        <p>Comunicate con nosotros y consultá por nuestros servicios.</p>
+        <a href="contacto.html" class="btn btn-rosa">Contactanos</a>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <p class="m-0">© 2026 Mely Nails - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
