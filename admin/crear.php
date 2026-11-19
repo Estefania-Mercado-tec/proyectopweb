@@ -1,9 +1,15 @@
 <?php
+
+$rol_requerido = 'Administrador';
+
+require_once '../includes/auth_guard.php';
 require_once '../config/conexion.php';
 
 $error = '';
 
-$stmt = $pdo->prepare("SELECT id_categoria, nombre FROM categorias ORDER BY nombre");
+$stmt = $pdo->prepare(
+    "SELECT id_categoria, nombre FROM categorias ORDER BY nombre"
+);
 $stmt->execute();
 $categorias = $stmt->fetchAll();
 
@@ -12,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = trim($_POST['nombre'] ?? '');
     $descripcion = trim($_POST['descripcion'] ?? '');
     $precio = $_POST['precio'] ?? '';
-    $id_categoria = $_POST['id_categoria'] ?? '';
+    $id_categoria = filter_input(INPUT_POST, 'id_categoria', FILTER_VALIDATE_INT);
 
-    if ($nombre === '' || $precio === '' || $id_categoria === '') {
+    if ($nombre === '' || $precio === '' || !$id_categoria) {
         $error = 'Completá todos los campos obligatorios.';
     } elseif (!is_numeric($precio) || $precio < 0) {
         $error = 'Ingresá un precio válido.';
@@ -44,6 +50,7 @@ $pagina_actual = 'admin';
 
 require_once '../includes/header.php';
 require_once '../includes/nav.php';
+
 ?>
 
 <main class="container py-5">
