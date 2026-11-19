@@ -127,3 +127,80 @@ Proyecto académico desarrollado para el emprendimiento Mely Nails.
 ![Variables de entorno](capturas/variables%20de%20entorno.jpeg)
 
 ![Configuración PHP](capturas/configuracion%20php.jpeg)
+
+---
+
+# Clase 5 – Procesamiento de Formularios y Seguridad Web
+
+## Descripción
+
+En esta etapa se incorporó el procesamiento de formularios mediante PHP, utilizando los métodos POST y GET. También se implementaron validaciones del lado del servidor y medidas de seguridad para prevenir ataques Cross-Site Scripting (XSS).
+
+## Formularios implementados
+
+### 1. Formulario POST – Contacto
+
+Se desarrolló un formulario de contacto que permite ingresar nombre, correo electrónico y mensaje.
+
+El procesamiento se realiza en `procesar-contacto.php`.
+
+Características:
+- Recepción de datos mediante POST.
+- Limpieza de entradas con `trim()`.
+- Validación de campos obligatorios.
+- Validación del formato del correo electrónico mediante `filter_var()`.
+- Sanitización de la salida con `htmlspecialchars()`.
+- Mensajes de éxito y error.
+- Conservación de los datos ingresados cuando existen errores.
+
+### 2. Formulario GET – Búsqueda de servicios
+
+Se desarrolló un buscador de servicios utilizando el método GET.
+
+Características:
+- Recepción del término de búsqueda mediante `$_GET`.
+- Limpieza de entradas con `trim()`.
+- Búsqueda de coincidencias mediante `stripos()`.
+- Visualización de resultados encontrados.
+- Mensaje cuando no existen coincidencias.
+- Protección de la salida mediante `htmlspecialchars()`.
+
+## Seguridad Web – Protección XSS
+
+Se utilizó `htmlspecialchars()` para evitar que el contenido ingresado por el usuario sea interpretado como código HTML o JavaScript ejecutable.
+
+Se realizaron pruebas con código JavaScript en el formulario de contacto, verificando que no se ejecutara.
+
+## Estructura de la Clase 5
+
+```text
+clase5/
+├── contacto.php
+├── procesar-contacto.php
+├── busqueda.php
+└── capturas/
+```
+
+## Capturas de pantalla
+
+Las siguientes imágenes muestran las pruebas realizadas:
+
+## Capturas de pantalla
+
+### 1. Formulario POST – Contacto
+![Formulario de contacto](clase5/capturas/formulariosecontacto.jpeg)
+
+### 2. Envío exitoso
+![Envío exitoso](clase5/capturas/envioexitoso.jpeg)
+
+### 3. Validación de correo electrónico
+![Correo inválido](clase5/capturas/correo%20inv%C3%A1lido.jpeg)
+
+### 4. Prueba de seguridad XSS
+![Prueba XSS](clase5/capturas/prueba%20XSS.jpeg)
+
+### 5. Formulario GET – Búsqueda con resultados
+![Búsqueda GET con resultado](clase5/capturas/getverde.jpeg)
+
+### 6. Formulario GET – Búsqueda sin resultados
+![Búsqueda GET sin resultados](clase5/capturas/getmensajeamarillo.jpeg)
