@@ -1,4 +1,8 @@
 <?php
+
+$rol_requerido = 'Administrador';
+
+require_once '../includes/auth_guard.php';
 require_once '../config/conexion.php';
 
 $sql = "SELECT servicios.id_servicio,
@@ -14,17 +18,15 @@ $sql = "SELECT servicios.id_servicio,
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $servicios = $stmt->fetchAll();
-?>
 
-<?php
 $titulo_pagina = 'Administrar servicios';
 $descripcion_pagina = 'Administración de servicios de Mely Nails';
 $pagina_actual = 'admin';
+
+require_once '../includes/header.php';
+require_once '../includes/nav.php';
+
 ?>
-
-<?php require_once '../includes/header.php'; ?>
-
-<?php require_once '../includes/nav.php'; ?>
 
 <main class="container py-5">
 
@@ -38,6 +40,7 @@ $pagina_actual = 'admin';
 
     <div class="table-responsive">
         <table class="table table-bordered table-hover align-middle">
+
             <thead>
                 <tr>
                     <th>ID</th>
@@ -50,33 +53,62 @@ $pagina_actual = 'admin';
             </thead>
 
             <tbody>
+
                 <?php foreach ($servicios as $servicio): ?>
+
                     <tr>
-                        <td><?= htmlspecialchars((string)$servicio['id_servicio']) ?></td>
-                        <td><?= htmlspecialchars($servicio['nombre']) ?></td>
-                        <td><?= htmlspecialchars($servicio['descripcion'] ?? '') ?></td>
-                        <td><?= htmlspecialchars($servicio['categoria']) ?></td>
-                        <td>$<?= htmlspecialchars((string)$servicio['precio']) ?></td>
 
                         <td>
-                            <a href="editar.php?id=<?= (int)$servicio['id_servicio'] ?>"
-                               class="btn btn-warning btn-sm">Editar</a>
+                            <?= htmlspecialchars((string)$servicio['id_servicio']) ?>
+                        </td>
 
-                            <form action="eliminar.php" method="POST"
+                        <td>
+                            <?= htmlspecialchars($servicio['nombre']) ?>
+                        </td>
+
+                        <td>
+                            <?= htmlspecialchars($servicio['descripcion'] ?? '') ?>
+                        </td>
+
+                        <td>
+                            <?= htmlspecialchars($servicio['categoria']) ?>
+                        </td>
+
+                        <td>
+                            $<?= htmlspecialchars((string)$servicio['precio']) ?>
+                        </td>
+
+                        <td>
+
+                            <a href="editar.php?id=<?= (int)$servicio['id_servicio'] ?>"
+                               class="btn btn-warning btn-sm">
+                                Editar
+                            </a>
+
+                            <form action="eliminar.php"
+                                  method="POST"
                                   style="display:inline;"
                                   onsubmit="return confirm('¿Estás segura de eliminar este servicio?');">
 
-                                <input type="hidden" name="id"
+                                <input type="hidden"
+                                       name="id"
                                        value="<?= (int)$servicio['id_servicio'] ?>">
 
-                                <button type="submit" class="btn btn-danger btn-sm">
+                                <button type="submit"
+                                        class="btn btn-danger btn-sm">
                                     Eliminar
                                 </button>
+
                             </form>
+
                         </td>
+
                     </tr>
+
                 <?php endforeach; ?>
+
             </tbody>
+
         </table>
     </div>
 

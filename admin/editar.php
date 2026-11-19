@@ -1,4 +1,8 @@
 <?php
+
+$rol_requerido = 'Administrador';
+
+require_once '../includes/auth_guard.php';
 require_once '../config/conexion.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
@@ -20,7 +24,9 @@ if (!$servicio) {
 }
 
 // Obtener categorías
-$stmt = $pdo->prepare("SELECT id_categoria, nombre FROM categorias ORDER BY nombre");
+$stmt = $pdo->prepare(
+    "SELECT id_categoria, nombre FROM categorias ORDER BY nombre"
+);
 $stmt->execute();
 $categorias = $stmt->fetchAll();
 
@@ -67,6 +73,7 @@ $pagina_actual = 'admin';
 
 require_once '../includes/header.php';
 require_once '../includes/nav.php';
+
 ?>
 
 <main class="container py-5">
