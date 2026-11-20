@@ -1,21 +1,20 @@
-
 <?php
 
-class Servicio
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Servicio extends Model
 {
-    private $conexion;
+    protected $table = 'servicios';
 
-    public function __construct($conexion)
-    {
-        $this->conexion = $conexion;
-    }
+    protected $primaryKey = 'id_servicio';
 
-    public function obtenerTodos()
-    {
-        $sql = "SELECT * FROM servicios ORDER BY nombre ASC";
-        $consulta = $this->conexion->prepare($sql);
-        $consulta->execute();
+    public $timestamps = false;
 
-        return $consulta->fetchAll(PDO::FETCH_ASSOC);
-    }
+    protected $fillable = [
+        'nombre',
+        'descripcion',
+        'precio'
+    ];
 }
