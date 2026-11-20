@@ -1,3 +1,4 @@
+
 <?php
 $titulo_pagina = 'Inicio | Mely Nails';
 $pagina_actual = 'index';
@@ -6,8 +7,9 @@ $descripcion_pagina = 'Mely Nails: servicios de manicura, uñas esculpidas y dis
 require_once __DIR__ . '/includes/header.php';
 require_once __DIR__ . '/includes/nav.php';
 ?>
+
 <main>
-  
+
 <!-- PRESENTACIÓN PRINCIPAL -->
 <section class="container text-center py-5">
     <h2>Realzá tu belleza con Mely Nails</h2>
@@ -55,6 +57,37 @@ require_once __DIR__ . '/includes/nav.php';
             </article>
         </div>
     </div>
+</section>
+
+<!-- BUSCADOR DINÁMICO TP9 -->
+<section class="container py-5">
+
+    <h2 class="text-center mb-3">Buscá nuestros servicios</h2>
+
+    <p class="text-center mb-4">
+        Escribí el nombre de un servicio y encontrá sus detalles y precios.
+    </p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <input
+                type="search"
+                id="inputBusqueda"
+                class="form-control"
+                placeholder="Ejemplo: manicura o semipermanente..."
+                autocomplete="off"
+            >
+
+            <div id="resultados" class="mt-4" aria-live="polite">
+                <p class="text-muted text-center">
+                    Escribí para buscar nuestros servicios.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
 </section>
 
 <!-- GALERÍA -->
@@ -105,6 +138,8 @@ require_once __DIR__ . '/includes/nav.php';
     <p>Comunicate con nosotros y consultá por nuestros servicios.</p>
     <a href="contacto.php" class="btn btn-rosa">Contactanos</a>
 </section>
+
+</main>
 
 <?php
 require_once __DIR__ . '/includes/footer.php';
