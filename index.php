@@ -61,7 +61,6 @@ require_once __DIR__ . '/includes/nav.php';
 
 <!-- BUSCADOR DINÁMICO TP9 -->
 <section class="container py-5">
-
     <h2 class="text-center mb-3">Buscá nuestros servicios</h2>
 
     <p class="text-center mb-4">
@@ -70,7 +69,6 @@ require_once __DIR__ . '/includes/nav.php';
 
     <div class="row justify-content-center">
         <div class="col-md-8">
-
             <input
                 type="search"
                 id="inputBusqueda"
@@ -84,10 +82,8 @@ require_once __DIR__ . '/includes/nav.php';
                     Escribí para buscar nuestros servicios.
                 </p>
             </div>
-
         </div>
     </div>
-
 </section>
 
 <!-- GALERÍA -->

@@ -1,3 +1,4 @@
+
 <?php
 $pagina_actual = $pagina_actual ?? '';
 
@@ -9,20 +10,14 @@ $seccion_servicios = ['servicios', 'manicura', 'semipermanente', 'unas-esculpida
 $servicios_activo = in_array($pagina_actual, $seccion_servicios);
 ?>
 
-<!-- MENÚ DE NAVEGACIÓN -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="index.php">Mely Nails</a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#menu"
-      aria-controls="menu"
-      aria-expanded="false"
-      aria-label="Abrir menú de navegación"
-    >
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#menu"
+      aria-controls="menu" aria-expanded="false"
+      aria-label="Abrir menú de navegación">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -30,19 +25,15 @@ $servicios_activo = in_array($pagina_actual, $seccion_servicios);
       <ul class="navbar-nav mx-auto">
 
         <li class="nav-item">
-          <a class="nav-link <?= enlaceActivo('index', $pagina_actual) ?>"
-             href="index.php">Inicio</a>
+          <a class="nav-link <?= enlaceActivo('index', $pagina_actual) ?>" href="index.php">Inicio</a>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle <?= $servicios_activo ? 'active' : '' ?>"
-             href="servicios.php"
-             role="button"
-             data-bs-toggle="dropdown"
-             aria-expanded="false">
+             href="servicios.php" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
             Servicios
           </a>
-
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="servicios.php">Todos los servicios</a></li>
             <li><a class="dropdown-item" href="manicura.php">Manicura clásica</a></li>
@@ -59,7 +50,17 @@ $servicios_activo = in_array($pagina_actual, $seccion_servicios);
         <li class="nav-item"><a class="nav-link <?= enlaceActivo('preguntas-frecuentes', $pagina_actual) ?>" href="preguntas-frecuentes.php">FAQ</a></li>
         <li class="nav-item"><a class="nav-link <?= enlaceActivo('contacto', $pagina_actual) ?>" href="contacto.php">Contacto</a></li>
 
+        <!-- ACCESO A USUARIOS -->
+        <li class="nav-item">
+          <a class="nav-link <?= enlaceActivo('login', $pagina_actual) ?>" href="login.php">Iniciar sesión</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= enlaceActivo('registro', $pagina_actual) ?>" href="registro.php">Registrarse</a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
+
